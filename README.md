@@ -12,34 +12,22 @@ We evaluate our incentive scheme's effectiveness using Los Angeles area data. Th
 Our network encompasses highways around Downtown Los Angeles and has 12 nodes, 32 links, 288.1 miles of road, 144 OD pairs, and 270 paths between OD pairs.
 
 <p align="center">
-<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="600" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="600" />
 <p align="center">
   
 The Los Angeles County data cannot be shared with the public. To check the code, synthetic data is provided. The example network is a graph with 4 nodes and one OD pair. There are two paths between ODs, and each path includes two edges.
 
-## Python 2.7.17 Requirements
-- googlemaps                    4.2.0
-- joblib                        0.14.1
-- matplotlib                    2.2.3
-- networkx                      1.11
-- numpy                         1.16.6
-- pandas                        0.20.3
-- pip                           20.3.4
-- pyparsing                     2.4.7
-- PyYAML                        5.3.1
-- scipy                         1.2.1
-- seaborn                       0.9.1
-- setuptools                    44.1.1
+# Results
+The number of organizations in the system can alter the total travel time and cost. Following figures illustrate the percentage decrease of travel time and total cost when there are different number of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figures, we observe a larger cost for reducing the same amount of travel time decrease when there are more organizations in the system. The intuitive reason behind this observation is as follows. For each organization, after incentivization, some drivers lose time, and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out, and hence we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
 
-## Python 3.6.8 Requirements 
-- numpy                 1.19.4+mkl
-- networkx              1.11
-- pandas                1.1.4
-- joblib                0.14.0
-- matplotlib            2.2.3
-- scipy                 1.5.4
-- seaborn               0.9.0
-- psutil                5.7.2
+<div class="row">
+<div class="column">
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario1_VOT157.png" width="250" />
+</div>
+<div class="column">
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario2_VOT157.png" width="250" />
+</div>
+</div> 
 
 # Model
 Run main_Det.bat. 

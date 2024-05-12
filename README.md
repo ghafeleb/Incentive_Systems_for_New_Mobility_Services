@@ -67,7 +67,7 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
   
 # Numerical Experiments
 ## Traffic Reduction Analysis
-We analyze the traffic reduction as decrease in the travel time of the system. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes.
+We analyze the traffic reduction as a decrease in the system's travel time. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes. The plot shows up to **7% travel time reduction** using the incentivization platform.
 
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_percNonU95_90_85_80.png" width="40%" />
@@ -75,7 +75,7 @@ We analyze the traffic reduction as decrease in the travel time of the system. T
   
 
 ## Incentivization Cost Analysis
-The number of organizations in the system can alter the total travel time and cost. The following figure illustrates the percentage decrease in travel time and total cost when there are different numbers of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figure, we observe a higher cost for reducing the same amount of travel time when more organizations are in the system. The intuitive reason behind this observation is as follows. For each organization, some drivers lose time after incentivization and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out. Hence, we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
+The number of organizations in the system can alter the total travel time and cost. The following figure illustrates the percentage decrease in travel time and total cost when there are different numbers of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figure, we observe a higher cost for reducing the same amount of travel time when more organizations are in the system. The intuitive reason behind this observation is as follows. For each organization, some drivers lose time after incentivization and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out. Hence, we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers. 
 
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costTTReduction_VOT2.63_solvADMM_percNonU95.png" width="40%" />
@@ -83,7 +83,7 @@ The number of organizations in the system can alter the total travel time and co
 
 ## Algorithm Performance Analysis
 We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art commercial solvers. Our algorithm 
-* Achieves speeds up to 12 times faster than Gurobi and 120 times faster than MOSEK
+* Achieves speeds up to **12 times faster** than Gurobi and **120 times faster** than MOSEK
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Execution Time Comparison" width="40%"/>
 <p align="center">
@@ -93,7 +93,7 @@ We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art 
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_Gurobi_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Travel Time Reduction Comparison" width="40%"/>
 <p align="center">
   
-* Saves up to $5000 in incentivization cost  
+* **Saves up to $5000** in incentivization cost  
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costComparisonVOT_VOT2.63_solv1Gurobi_solv2ADMM_percNonU95_90_85_80_nC1.png" alt="Gutobi vs. ADMM Incentivization Cost Comparison" width="40%"/>
 <p align="center">

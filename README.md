@@ -69,14 +69,15 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
 ## Traffic Reduction Analysis
 We analyze the traffic reduction as decrease in the travel time of the system. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes.
 
-<p float="center">
+<p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_percNonU95_90_85_80.png" width="40%" />
 <p align="center">
+  
 
 ## Incentivization Cost Analysis
 The number of organizations in the system can alter the total travel time and cost. The following figure illustrates the percentage decrease in travel time and total cost when there are different numbers of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figure, we observe a higher cost for reducing the same amount of travel time when more organizations are in the system. The intuitive reason behind this observation is as follows. For each organization, some drivers lose time after incentivization and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out. Hence, we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
 
-<p float="center">
+<p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costTTReduction_VOT2.63_solvADMM_percNonU95.png" width="40%" />
 <p align="center">
 

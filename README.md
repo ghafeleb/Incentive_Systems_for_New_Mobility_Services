@@ -1,6 +1,6 @@
 # Incentive Systems for New Mobility Services
 <p align="center">
-<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentiveOfferingPlatforms.png" width="1200" alt="Traditional vs. Organization Incentivization"/>
+<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentiveOfferingPlatforms.png" width="100%" alt="Traditional vs. Organization Incentivization"/>
   <br>
   <em>(a) Traditional platforms for offering incentives: incentives are offered to individual drivers in the system. (b) Presented platform for offering incentives: incentives are offered to new mobility services to change their drivers' behavior.</em>
 </p>
@@ -13,7 +13,7 @@ Step 2) The central planner incentivizes organizations to change their routes an
 Step 3) Observe organizations’ response and go back to Step 1 for the next time interval.
 The central planner (which is referred to as "Incentive OfferingPlatform" in Fig. 1 (b)) continually repeats this three-step process in the network for every time interval. A detailed description of the process is provided in the following figure:
 <p align="center">
-<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentivization_cycle_noBack.PNG" width="400" alt="Incentivization Steps"/>
+<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentivization_cycle_noBack.PNG" width="40%" alt="Incentivization Steps"/>
   <br>
   <em>Detailed description of the incentivization process.</em>
 </p>
@@ -35,7 +35,7 @@ Moreover, you must install MATLAB before running the scripts in this repository.
 We evaluate our incentive scheme's effectiveness using Los Angeles area data. The presence of multiple routes between most origin-destination (OD) pairs makes the Los Angeles area particularly suitable for our assessment. We use the data collected by the Archived Data Management System (ADMS), a comprehensive transportation dataset compilation by University of Southern California researchers. First, we extract sensor details, including their locations. We extract the speed and volume data of selected sensors. Nodes for the network graph are chosen from on-ramps and highway intersections. Connecting link data is derived from in-between sensors. Node distances are determined via Google Maps API. The data preparation workflow is as follows:
 
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/data_preparation_workflow.png" width="400" alt="Data Preparation Workflow"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/data_preparation_workflow.png" width="40%" alt="Data Preparation Workflow"/>
   <br>
   <em>Data preparation workflow: First, traffic data and sensors' location data are received from ADMS Server. Next, sensors' location data is processed to compute sensor distances. Finally, sensor distances and traffic data are combined to create the graph network data.</em>
 </p>
@@ -43,7 +43,7 @@ We evaluate our incentive scheme's effectiveness using Los Angeles area data. Th
 Our network encompasses highways around Downtown Los Angeles and has 12 nodes, 32 links, 288.1 miles of road, 144 OD pairs, and 270 paths between OD pairs.
 
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="600" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="75%" />
   <br>
   <em>Studied region and the highway sensors inside the region. This region encompasses several areas notorious for high traffic congestion, particularly Downtown Los Angeles.</em>
 <p align="center">
@@ -59,7 +59,7 @@ python runDemo.py --region_ "region_toy" --config_filename "../data/YAML/region_
 First, the demo creates the synthetic data as a demo example. The demo graph includes 4 nodes (O, A, B, and D) and one Origin-Destination (OD) pair: node O as the origin and node D as the destination. There are 4 roads/edges (x, y, z, and w) 2 routes between the OD (route 1: x-y, route 2: z-w). After creating the data, the demo incentivizes the user drivers of the system. Finally, it computes the incentivization cost.
 
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/synthetic_data.png" width="300" alt="Demo Graph"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/synthetic_data.png" width="40%" alt="Demo Graph"/>
   <br>
   <em>Demo graph.</em>
 <p align="center">
@@ -70,14 +70,14 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
 We analyze the traffic reduction as decrease in the travel time of the system. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes.
 
 <p float="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_percNonU95_90_85_80.png" width="400" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_percNonU95_90_85_80.png" width="40%" />
 <p align="center">
 
 ## Incentivization Cost Analysis
 The number of organizations in the system can alter the total travel time and cost. The following figure illustrates the percentage decrease in travel time and total cost when there are different numbers of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figure, we observe a higher cost for reducing the same amount of travel time when more organizations are in the system. The intuitive reason behind this observation is as follows. For each organization, some drivers lose time after incentivization and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out. Hence, we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
 
 <p float="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costTTReduction_VOT2.63_solvADMM_percNonU95.png" width="400" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costTTReduction_VOT2.63_solvADMM_percNonU95.png" width="40%" />
 <p align="center">
 
 ## Algorithm Performance Analysis

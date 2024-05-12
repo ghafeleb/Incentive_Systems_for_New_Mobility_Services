@@ -84,7 +84,7 @@ python runDemo.py --region_ "region_toy" --config_filename "../data/YAML/region_
 ```
 
 <p align="justify">
-First, the demo creates the synthetic data as a demo example. The demo graph includes 4 nodes (O, A, B, and D) and one Origin-Destination (OD) pair: node O as the origin and node D as the destination. There are 4 roads/edges (x, y, z, and w) 2 routes between the OD (route 1: x-y, route 2: z-w). After creating the data, the demo incentivizes the user drivers of the system. Finally, it computes the incentivization cost.
+First, the demo creates the synthetic data as a demo example. The demo graph includes 4 nodes (O, A, B, and D) and one Origin-Destination (OD) pair: node O as the origin and node D as the destination. There are 4 roads/edges (x, y, z, and w) with 2 routes between the OD (route 1: x-y, route 2: z-w). After creating the data, the demo incentivizes the system's user drivers. Finally, it computes the incentivization cost.
 </p>
 
 <p align="center">

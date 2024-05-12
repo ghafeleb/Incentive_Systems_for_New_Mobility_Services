@@ -34,7 +34,7 @@ The Los Angeles County data cannot be shared with the public, but synthetic data
 You can test the incentivization on a synthetic graph network by running the following command:
 ```
 cd scripts
-python runDemo.py
+python runDemo.py --region_ "region_toy" --config_filename "../data/YAML/region_toy.yaml" --n_iter_UE 5 --seed_data 2 --seed_solver 2 --budget 10000 --VOT 2.63 --solver_name "ADMM" --MIPGap 0.01 --n_iter_ADMM 100 --step_size_UE 0.01 --percNonUVal 50 --nPath 2 --n_time 204 --n_time_inc_start 13 --n_time_inc_end 24 --rho 20 --n_companies_ADMM 1
 ```
 First, the demo creates the synthetic data as a demo example. The demo graph includes 4 nodes (O, A, B, and D) and one Origin-Destination (OD) pair: node O as the origin and node D as the destination. There are 4 roads/edges (x, y, z, and w) 2 routes between the OD (route 1: x-y, route 2: z-w). After creating the data, the demo incentivizes the user drivers of the system. Finally, it computes the incentivization cost.
 

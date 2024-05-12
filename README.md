@@ -46,7 +46,7 @@ python3 -m pip install -r requirements.txt
 ```
 
 <p align="justify">
-Moreover, you must install MATLAB before running the scripts in this repository. You can download and install MATLAB from [MathWorks website](https://www.mathworks.com/). Next, you should install CVX by following the steps provided on [CVX website](https://cvxr.com/cvx/doc/install.html). Next, you should [install Gurobi solver on CVX]([https://cvxr.com/cvx/doc/gurobi.html](https://cvxr.com/cvx/doc/gurobi.html)).
+Moreover, you must install MATLAB before running the scripts in this repository. You can download and install MATLAB from <a href="https://www.mathworks.com/">MathWorks website</a>. Next, you should install CVX by following the steps provided on <a href="https://cvxr.com/cvx/doc/install.html">CVX website</a>. Next, you should <a href="https://cvxr.com/cvx/doc/gurobi.html">install the Gurobi solver on CVX</a>.
 </p>
 
 # Data

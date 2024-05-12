@@ -4,8 +4,10 @@
   <br>
   <em>(a) Traditional platforms for offering incentives: incentives are offered to individual drivers in the system. (b) Presented platform for offering incentives: incentives are offered to new mobility services to change their drivers' behavior.</em>
 </p>
-  
+
+<p align="justify">
 Traffic congestion has become an inevitable challenge in large cities due to population increases and the expansion of urban areas. Various approaches are introduced to mitigate traffic issues, encompassing from expanding the road infrastructure to employing demand management. Congestion pricing and incentive schemes are extensively studied for traffic control in traditional networks where each driver/rider is a network "player." In this setup, drivers'/riders' "selfish" behavior hinders the network from reaching a socially optimal state. In future mobility services, on the other hand, a large portion of drivers/vehicles may be controlled by a small number of companies/organizations. In such a system, offering incentives to organizations can potentially be much more effective in reducing traffic congestion rather than offering incentives directly to drivers. This paper studies the problem of offering incentives to organizations to change the behavior of their individual drivers (or individuals relying on the organization’s services). We developed a model where incentives are offered to each organization based on the aggregated travel time loss across all drivers/riders in that organization. Such an incentive offering mechanism requires solving a large-scale optimization problem to minimize the system-level travel time. We propose an efficient algorithm for solving this optimization problem. Numerous experiments on Los Angeles County traffic data reveal the ability of our method to reduce system-level travel time by up to 7.15%. Moreover, our experiments show that incentivizing organizations can be up to 7 times more cost-effective than incentivizing individual drivers when aiming for maximum travel time reduction.
+</p>
 
 Our framework will be based on the following three-step procedure:
 Step 1) The central planner receives organizations’ demand estimates for the next time interval (e.g., the next few hours).

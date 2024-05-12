@@ -11,9 +11,13 @@ Traffic congestion has become an inevitable challenge in large cities due to pop
 
 <p align="justify">
 Our framework will be based on the following three-step procedure:
+  
 Step 1) The central planner receives organizations’ demand estimates for the next time interval (e.g., the next few hours).
+
 Step 2) The central planner incentivizes organizations to change their routes and travel time.
+
 Step 3) Observe organizations’ response and go back to Step 1 for the next time interval.
+
 The central planner (which is referred to as "Incentive OfferingPlatform" in Fig. 1 (b)) continually repeats this three-step process in the network for every time interval. A detailed description of the process is provided in the following figure:
 </p>
 
@@ -26,7 +30,7 @@ The central planner (which is referred to as "Incentive OfferingPlatform" in Fig
 
 # Dependencies
 <p align="justify">
-  The required packages must be installed via Anaconda or pip before running the codes. Download and install **Python 2.x version** from [Python 2.x Version](https://www.python.org/downloads/). You can install the required packages via pip using the following command:
+  The required packages must be installed via Anaconda or pip before running the codes. Download and install <b>Python 2.x version</b> from  <a href="https://www.python.org/downloads/">Python 2.x Version</a>. You can install the required packages via pip using the following command:
 </p>
 
 ```
@@ -34,7 +38,7 @@ python2 -m pip install -r requirements.txt
 ```
 
 <p align="justify">
-Download and install **Python 3.x version** from [Python 3.x Version](https://www.python.org/downloads/).  You can install the required packages via pip using the following command:
+Download and install <b>Python 3.x version</b> from <a href="https://www.python.org/downloads/">Python 3.x Version</a>.  You can install the required packages via pip using the following command:
 </p>
 
 ```
@@ -93,7 +97,7 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
 # Numerical Experiments
 ## Traffic Reduction Analysis
 <p align="justify">
-We analyze the traffic reduction as a decrease in the system's travel time. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes. The plot shows up to **7% travel time reduction** using the incentivization platform.
+We analyze the traffic reduction as a decrease in the system's travel time. The following plot provides the percentage of travel time decrease with incentivization as compared to a system with no incentivization at VOT of $157.8 for different penetration rates (percentage of drivers to which the incentivization platform is able to incentivize). The budget of $0 shows the case of a no-incentivization. The no-incentivization system solution assumes all drivers are background drivers. We observe that by increasing the available budget, the decrease in travel time increases (as expected). This decrease is more for the same budgets at larger penetration rates because the model has access to more drivers to select and has more flexibility to recommend alternative routes. The plot shows up to <b>7% travel time reduction</b> using the incentivization platform.
 </p>
 
 <p align="center">
@@ -113,8 +117,9 @@ The number of organizations in the system can alter the total travel time and co
 ## Algorithm Performance Analysis
 <p align="justify">
 We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art commercial solvers. Our algorithm 
-* Achieves speeds up to **12 times faster** than Gurobi and **120 times faster** than MOSEK
 </p>
+
+* Achieves speeds up to **12 times faster** than Gurobi and **120 times faster** than MOSEK
 
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Execution Time Comparison" width="40%"/>

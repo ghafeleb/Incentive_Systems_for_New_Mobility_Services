@@ -33,6 +33,8 @@ Our network encompasses highways around Downtown Los Angeles and has 12 nodes, 3
 
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="600" />
+  <br>
+  <em>Studied region and the highway sensors inside the region. This region encompasses several areas notorious for high traffic congestion, particularly Downtown Los Angeles.</em>
 <p align="center">
   
 The Los Angeles County data cannot be shared with the public, but synthetic data is provided in the demo to check the code. 

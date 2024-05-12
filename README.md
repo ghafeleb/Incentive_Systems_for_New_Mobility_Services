@@ -13,7 +13,7 @@ Step 2) The central planner incentivizes organizations to change their routes an
 Step 3) Observe organizations’ response and go back to Step 1 for the next time interval.
 The central planner (which is referred to as "Incentive OfferingPlatform" in Fig. 1 (b)) continually repeats this three-step process in the network for every time interval. A detailed description of the process is provided in the following figure:
 <p align="center">
-<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentivization_cycle_noBack.PNG" width="1200" alt="Incentivization Steps"/>
+<img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentivization_cycle_noBack.PNG" width="400" alt="Incentivization Steps"/>
   <br>
   <em>Detailed description of the incentivization process.</em>
 </p>
@@ -83,14 +83,23 @@ The number of organizations in the system can alter the total travel time and co
 ## Algorithm Performance Analysis
 We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art commercial solvers. Our algorithm 
 * Achieves speeds up to 12 times faster than Gurobi and 120 times faster than MOSEK
-* Closely mirrors the performance of Gurobi and Mosek
-* Saves up to $5000 in incentivization cost
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Execution Time Comparison" width="30%"/>
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_Gurobi_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Travel Time Reduction Comparison" width="30%"/>
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costComparisonVOT_VOT2.63_solv1Gurobi_solv2ADMM_percNonU95_90_85_80_nC1.png" alt="Gutobi vs. ADMM Incentivization Cost Comparison" width="30%"/>
 <p align="center">
-  
+* Closely mirrors the performance of Gurobi and Mosek 
+<p align="center">
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Execution Time Comparison" width="30%"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_Gurobi_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Travel Time Reduction Comparison" width="30%"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costComparisonVOT_VOT2.63_solv1Gurobi_solv2ADMM_percNonU95_90_85_80_nC1.png" alt="Gutobi vs. ADMM Incentivization Cost Comparison" width="30%"/>
+<p align="center">
+* Saves up to $5000 in incentivization cost  
+<p align="center">
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Execution Time Comparison" width="30%"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/ttReductionPerc_VOT2.63_solvADMM_Gurobi_percNonU95_90_85_80.png" alt="Gutobi vs. ADMM Travel Time Reduction Comparison" width="30%"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costComparisonVOT_VOT2.63_solv1Gurobi_solv2ADMM_percNonU95_90_85_80_nC1.png" alt="Gutobi vs. ADMM Incentivization Cost Comparison" width="30%"/>
+<p align="center">
 <!--   <p align="center"> -->
 <!--   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" width="500" alt="Execution Time Comparison"/> -->
 <!--   <br> -->

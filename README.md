@@ -15,15 +15,20 @@ Our network encompasses highways around Downtown Los Angeles and has 12 nodes, 3
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/region_y3_new.PNG" width="600" />
 <p align="center">
   
-The Los Angeles County data cannot be shared with the public. To check the code, synthetic data is provided. The example network is a graph with 4 nodes and one OD pair. There are two paths between ODs, and each path includes two edges.
+The Los Angeles County data cannot be shared with the public. Synthetic data is provided to check the code. The example network is a graph with 4 nodes and one OD pair. There are two paths between ODs, and each path includes two edges.
 
-# Results
+# Demo
+To test a demo of the incentivization platform, run 
+```
+cd scripts
+python runDemo.py
+```
+This demo creates the synthetic graph. Next, it incentivizes the user drivers of the system. Finally, it computes the incentivization cost.
+
+# Numerical Experiments
 The number of organizations in the system can alter the total travel time and cost. Following figures illustrate the percentage decrease of travel time and total cost when there are different number of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figures, we observe a larger cost for reducing the same amount of travel time decrease when there are more organizations in the system. The intuitive reason behind this observation is as follows. For each organization, after incentivization, some drivers lose time, and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out, and hence we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
 
 <p float="left">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario1_VOT157.png" width="400" />
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario2_VOT157.png" width="400" />
 </p> 
-
-# Model
-Run main_Det.bat. 

@@ -1,0 +1,129 @@
+%%%%%% Get speed and volume based on traffic after incentivization
+function getSV_realCost(iterRun, nonuser_perc_prob, budget, ...
+    n_companies_solving_algo, n_iter_ADMM, ...
+    n_time, n_time_inc_start, n_time_inc_end, ...
+    fairness, VOT, seed_solving_algo, seedData, rho, step_size, ...
+    region_, setting_region, MIPGap)
+%% Initialization 1
+iterRun = iterRun+1;
+nonuser_prob = nonuser_perc_prob/100;
+% Split the string at each underscore
+strArray = split(fairness, '_');
+% Convert the split string array to double precision numbers
+prob_fairness = transpose(str2double(strArray));  % [x1.0, x1.1, x1.5, x2.0, x2.5]
+LogicalStr = {'F', 'T'};
+
+RHSMultiplier = [1, 1.1, 1.5, 2, 2.5];
+nonuser_perc_ADMM = repmat(nonuser_prob, n_time, 1);
+% Initialize the decision matrix S with the baseline
+initializeSBaseline = true;
+rng(seed_solving_algo) % Specification of seed for the random number generator (rng)
+
+assert(sum(prob_fairness./100)==1) % Sum of probs in dist should be 1
+
+%% Load Incentivization Results
+setting_output = sprintf('%.0f', nonuser_perc_ADMM(1)*100);
+inputFolder0 = fullfile('../data', region_, setting_region);
+if n_iter_ADMM < 0
+    if n_iter_ADMM == -1
+        solver_name = "Gurobi"
+    elseif n_iter_ADMM == -2
+        solver_name = "Mosek"
+    elseif n_iter_ADMM == -3
+        solver_name = "GLPK"
+    end
+    folderRun = fullfile(inputFolder0, ...
+                        strcat(solver_name,'_new_Det_initAll2_MultT', ...
+                                '_b', num2str(budget), ...
+                                '_sD', num2str(seedData), ...
+                                '_sS', num2str(seed_solving_algo), ...
+                                '_VOT', num2str(VOT), ...
+                                '_nC', num2str(1), ...
+                                '_f', fairness, ...
+                                '_percNonU', num2str(setting_output), ...
+                                '_nTIS', num2str(n_time_inc_start), ...
+                                '_nTIE', num2str(n_time_inc_end), ...
+                                '_ss', num2str(step_size), ...
+                                '_itN', num2str(iterRun)));
+    fileIncentivized = fullfile(folderRun, strcat(solver_name, ...
+                            '_MIPGap', num2str(MIPGap), '_solver_result.mat'));
+%     fileIncentivized = fullfile(folderRun, strcat(solver_name, '_solver_result.mat'));
+    
+else
+    folderStr = 'Det_initAll2_MultT';
+    folderRun = fullfile(inputFolder0, ...
+                    strcat(folderStr, ...
+                    '_b', num2str(budget), ...
+                    '_sD', num2str(seedData), ...
+                    '_sA', num2str(seed_solving_algo), ...
+                    '_r', num2str(rho), ...
+                    '_it', num2str(n_iter_ADMM),...
+                    '_VOT', num2str(VOT), ...
+                    '_nC', num2str(n_companies_solving_algo), ...
+                    '_f', fairness, ...
+                    '_initSB_', LogicalStr{initializeSBaseline + 1}, ...
+                    '_percNonU', setting_output, ...
+                    '_nTIS', num2str(n_time_inc_start), ...
+                    '_nTIE', num2str(n_time_inc_end), ...
+                    '_ss', num2str(step_size), ...
+                    '_itN', num2str(iterRun)));
+    
+    fileIncentivized = fullfile(folderRun, ...
+        strcat('result_MIPGap', num2str(MIPGap), '_ILP.mat'));
+%         strcat('result_',...
+%         num2str(iterRun), ...
+%         '.mat'));
+
+    % load(fileIncentivized, 'omega_sol*', 'link_loc', 'tt0_array', 'L_array', 'w_array', 'n_link', 'n_time', 'v_tilda_baseline');
+
+end
+fprintf('Loading data from\nfolderRunSolver: %s\n', fileIncentivized)
+load(fileIncentivized, 'omega_sol*', 'link_loc', 'tt0_array', ...
+    'w_array', 'n_link', 'n_time', 'v_tilda_baseline');
+
+v_users = omega_sol1;
+% if n_companies_solving_algo==1
+%     v_users = omega_sol1;
+% elseif n_companies_solving_algo==2
+%     v_users = omega_sol1 + omega_sol2;
+% end
+
+folderRun0 = fullfile(inputFolder0, ...
+    strcat('Det_MultT', ...
+            '_sD', num2str(seedData), ...
+            '_ss', num2str(step_size)));
+outputFolder2 = fullfile(folderRun0, strcat('Run_', num2str(iterRun), '_initEta'));
+fileName2 = fullfile(outputFolder2, strcat('data_', num2str(iterRun), '.mat'));
+load(fileName2, 'L_array');
+
+%% Compute volume and speed
+tt_single = @(x, v, tt0, w) tt0 + 0.15*tt0*((x+v)^4)/(w^4);
+v_incentivized = zeros(n_link*n_time, 1);
+s_incentivized = zeros(n_link*n_time, 1);
+
+for iter_omega = 1:n_link*n_time
+    tt0 = tt0_array(link_loc(mod(iter_omega-1, size(tt0_array, 1)) + 1, 1), 3);
+    w = w_array(link_loc(mod(iter_omega-1, size(w_array, 1)) + 1, 1), 3);
+    L = L_array(link_loc(mod(iter_omega-1, size(L_array, 1))+1, 1), 2);
+    
+    % Volume
+    v_dynamic = v_users(iter_omega, 1);
+    v_fixed = v_tilda_baseline(iter_omega, 1);
+    v_incentivized(iter_omega, 1) = v_fixed + v_dynamic;
+    
+    % tt
+    tt_temp = tt_single(v_dynamic, v_fixed, tt0, w);
+    % speed
+    s_incentivized(iter_omega, 1) = L/(tt_temp/60);
+end
+%% Save the speed and volume files
+folderCost = fullfile(folderRun, strcat('cost_MIPGap', num2str(MIPGap)));
+mkdir(folderCost);
+% Fix the idx of speed and volume data & save
+volume_reshaped = reshape(v_incentivized(:, 1), n_link, n_time);
+volume_reshaped_2save = volume_reshaped(link_loc(:, 1), :);
+dlmwrite(fullfile(folderCost, 'v_inc.csv'), volume_reshaped_2save, 'precision', 10);
+
+speed_reshaped = reshape(s_incentivized(:, 1), n_link, n_time);
+speed_reshaped_2save = speed_reshaped(link_loc(:, 1), :);
+dlmwrite(fullfile(folderCost, 's_inc.csv'), speed_reshaped_2save, 'precision', 10);

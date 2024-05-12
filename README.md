@@ -69,7 +69,7 @@ We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art 
 * Closely mirrors the performance of Gurobi and Mosek
 * Saves up to $5000 in incentivization cost
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80_blue.png" width="500" alt="Execution Time Comparison"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" width="500" alt="Execution Time Comparison"/>
   <br>
   <em> The presented algorithm significantly outperforms Gurobi and MOSEK in execution time.</em>
 <p align="center">

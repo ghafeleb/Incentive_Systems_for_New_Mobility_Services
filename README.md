@@ -39,7 +39,7 @@ python runDemo.py
 First, the demo creates the synthetic data as a demo example. The demo graph includes 4 nodes (O, A, B, and D) and one Origin-Destination (OD) pair: node O as the origin and node D as the destination. There are 4 roads/edges (x, y, z, and w) 2 routes between the OD (route 1: x-y, route 2: z-w). After creating the data, the demo incentivizes the user drivers of the system. Finally, it computes the incentivization cost.
 
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/synthetic_data.png" width="600" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/synthetic_data.png" width="300" />
 <p align="center">
   
   

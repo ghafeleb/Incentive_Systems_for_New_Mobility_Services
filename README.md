@@ -58,18 +58,19 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
 ## Incentivization Cost Analysis
 The number of organizations in the system can alter the total travel time and cost. The following figures illustrate the percentage decrease in travel time and total cost when there are different numbers of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figures, we observe a larger cost for reducing the same amount of travel time decrease when there are more organizations in the system. The intuitive reason behind this observation is as follows. For each organization, some drivers lose time after incentivization, and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out, and hence we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.
 
+<p float="left">
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario1_VOT157.png" width="400" />
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario2_VOT157.png" width="400" />
+</p> 
+
 ## Algorithm Performance Analysis
 We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art commercial solvers. Our algorithm 
 * Achieves speeds up to 12 times faster than Gurobi and 120 times faster than MOSEK
 * Closely mirrors the performance of Gurobi and Mosek
 * Saves up to $5000 in incentivization cost
 <p align="center">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80_blue.png" width="300" alt="Execution Time Comparison"/>
+  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80_blue.png" width="600" alt="Execution Time Comparison"/>
   <br>
   <em> The presented algorithm significantly outperforms Gurobi and MOSEK in execution time.</em>
 <p align="center">
   
-<p float="left">
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario1_VOT157.png" width="400" />
-  <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/cost_tt_reduction_scenario2_VOT157.png" width="400" />
-</p> 

@@ -40,7 +40,7 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
 
 <p float="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/synthetic_data.png" width="400" />
-<p align="center">
+<p/>
   
 # Numerical Experiments
 The number of organizations in the system can alter the total travel time and cost. Following figures illustrate the percentage decrease of travel time and total cost when there are different number of organizations in the system. As an extreme case, we also include the case that each organization contains one driver (i.e., we incentivize individuals rather than organizations). In the following figures, we observe a larger cost for reducing the same amount of travel time decrease when there are more organizations in the system. The intuitive reason behind this observation is as follows. For each organization, after incentivization, some drivers lose time, and some gain travel time. At the organizational level, the time changes of drivers can cancel each other out, and hence we may not need to compensate the organization significantly. When the number of drivers per organization decreases, the canceling effect becomes weaker, and the incentivization costs more. This also explains why incentivizing organizations is much more cost-efficient than incentivizing individual drivers.

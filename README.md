@@ -134,8 +134,16 @@ We compare our presented algorithm against Gurobi and MOSEK as state-of-the-art 
 <p align="center">
   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/costComparisonVOT_VOT2.63_solv1Gurobi_solv2ADMM_percNonU95_90_85_80_nC1.png" alt="Gutobi vs. ADMM Incentivization Cost Comparison" width="40%"/>
 <p align="center">
-<!--   <p align="center"> -->
-<!--   <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/execTimeComparison_percNonU95_90_85_80.png" width="500" alt="Execution Time Comparison"/> -->
-<!--   <br> -->
-<!--   <em> The presented algorithm significantly outperforms Gurobi and MOSEK in execution time.</em> -->
-<!-- <p align="center"> -->
+
+
+## Citation
+
+If you find this repository useful in your research, please cite the following paper:
+```
+@article{ghafelebashi2023incentive,
+  title={Incentive Systems for Fleets of New Mobility Services},
+  author={Ghafelebashi, Ali and Razaviyayn, Meisam and Dessouky, Maged},
+  journal={arXiv preprint arXiv:2312.02341},
+  year={2023}
+}
+```

@@ -93,7 +93,7 @@ First, the demo creates the synthetic data as a demo example. The demo graph inc
   <em>Demo graph.</em>
 <p align="center">
 
-# OD Estimation
+# Origin-Destination (OD) Estimation
 For OD estimation, we rely on the code from <a href="https://github.com/ghafeleb/Congestion-Reduction-via-Personalized-Incentives/tree/main">Congestion Reduction via Personalized Incentives paper repo</a> which is an adapted and modified version of the <a href="https://github.com/Lemma1/DPFE">implementation of dynamic origin-destination demand estimation</a>.
 
   

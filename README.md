@@ -1,4 +1,4 @@
-# Incentive Systems for New Mobility Services
+# Incentive Systems for Fleets of New Mobility Services
 <p align="center">
 <img src="https://github.com/ghafeleb/Incentive_Systems_for_New_Mobility_Services/blob/main/images/incentiveOfferingPlatforms.png" width="100%" alt="Traditional vs. Organization Incentivization"/>
   <br>
